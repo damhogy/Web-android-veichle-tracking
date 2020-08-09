@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Easy Track</string>
+    <string name="location_request">Please allow to access your location</string>
+    <string name="warning">check permission</string>
+    <string name="Driver_Login">Driver Login</string>
+    <string name="Button_login">Login</string>
+    <string name="Button_Register">Registration</string>
+    <string name="checkbox">Remember Me </string>
+    <string name="HintPassWord">Enter your Password</string>
+    <string name="HintUserid"> Enter your email</string>
+    <string name="imagedes">this is image logo</string>
+    <string name="contentDescription">Splash Screen</string>
+    <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
+    <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
+    <string name="google_maps_key">AIzaSyBgmodo6wIm2b0shzCXhrcsFL7Med2Vg-0</string>
+</resources>

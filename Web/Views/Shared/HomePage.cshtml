@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/all.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Style/HStyle.css" rel="stylesheet" />
+    <link rel="icon" href="~/Image/logoico.ico" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a href="#" class="navbar-brand ml-3"><span style="color:black">Easy</span>Track</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu"
+                    aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse"></div>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a href="/Home/Index" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Home/Features" class="nav-link">Features</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="/Home/About" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Home/ContactUs" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn menu-right-btn border" type="submit" formaction="/Account/LoginView">
+                        Login
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer>
+        <div class="section-5 text-center">
+            <h4 style="margin-top:5%;margin-bottom:1%">Get The Applicaion From Easy Track</h4>
+            <h4 style="margin-bottom:2%">If You Need Any Help</h4>
+            <div class="form-inline justify-content-center">
+                <input type="text" name="email" id="email" placeholder="Email" size="40" class="form-control px-4 py-2" />
+                <input type="button" value="Contact Us" class="btn btn-danger px-4py-2" />
+            </div>
+
+            <div class="social" style="margin:4%">
+                <div class="d-flex flex-row justify-content-center">
+                    <i class="fab fa-facebook-f m-2"></i>
+                    <i class="fab fa-twitter m-2"></i>
+                    <i class="fab fa-youtube m-2"></i>
+                    <i class="fab fa-instagram m-2"></i>
+                </div>
+            </div>
+            <hr />
+            <h5 style="color:lightseagreen">Easy Track &copy;</h5>
+        </div>
+    </footer>
+
+</body>
+</html>

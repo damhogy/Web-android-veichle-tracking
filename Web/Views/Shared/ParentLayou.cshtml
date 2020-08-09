@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Track</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/all.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Style/StyleP.css" rel="stylesheet" />
+    <link rel="icon" href="~/Image/logoico.ico" />
+</head>
+<body>
+    <div class="sidebar">
+        <div class="bg-dark mb-3" style="height:47px;">
+            <img src="~/Image/parent.jpg" alt="avatar" style="width:47px;height:45px;border-radius: 50%" />
+            <span style="color:white">Parent Name</span>
+        </div>
+        <a href="/Parents/TrackSon"><i class="fas fa-search-location"></i> Track son</a>
+        <a href="/Parents/BusRoute"><i class="fas fa-route mt-3"></i> Bus Route</a>
+        <a href="/Account/LoginView"><i class="fas fa-sign-out-alt mt-3"></i> Log Out</a>
+    </div>
+    <div class="top-head d-flex justify-content-center fixed-top">
+        <div class="justify-content-center" style="font-family: 'Righteous', cursive;color:black">
+            <span style="font-size:25px">Easy</span> <img src="~/Image/logo.png" style="height:44px;width:48px" />  <span style="font-size:25px;">Track</span>
+        </div>
+    </div>
+
+    <center>
+        <div style="margin-left:160px;">
+            @RenderBody()
+        </div>
+    </center>
+</body>
+</html>

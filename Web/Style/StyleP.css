@@ -1,0 +1,49 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Pacifico|Righteous|Roboto+Condensed&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    /*font-family:serif;*/
+    zoom: 115%;
+}
+
+.sidebar {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #35475e;
+    overflow-x: hidden;
+    /*padding-top: 16px;*/
+    font-family:serif
+}
+
+.sidebar a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 16px;
+        color: #dfd8e8;
+        display: block;
+ }
+.sidebar a i {
+            color: #007bff;
+}
+
+.sidebar a:hover {
+            color: #007bff;
+}
+.top-head {
+    height: 47px;
+    margin-left: 160px;
+    padding-left: 0px;
+    background-color: #35475e;
+}
+.main {
+  margin-left: auto; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+.container {
+    width: 50%;
+}
+

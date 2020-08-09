@@ -1,0 +1,88 @@
+﻿@model Easy_Track_MVC.Models.Student
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+
+<div class="form mt-5 mb-3" style="border:solid;border-color:#343a40;width:640px;margin:auto; margin-top:4rem !important;">
+    <center>
+        <h6 class="text-danger">Are you sure you want to delete this Student?</h6>
+    </center>
+    <div class="form-group ">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-12" })
+        <div class="col-md-12">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-12" })
+
+        <div class="col-md-12">
+            @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Class, htmlAttributes: new { @class = "control-label col-md-12" })
+        <div class="col-md-12">
+            @Html.EditorFor(model => model.Class, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Bus.BusNum, htmlAttributes: new { @class = "control-label col-md-12" })
+        <div class="col-md-12">
+            @Html.EditorFor(model => model.Bus.BusNum, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Parent.Named, "Parent Name", htmlAttributes: new { @class = "control-label col-md-12" })
+        <div class="col-md-12">
+            @Html.EditorFor(model => model.Parent.Named, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+        </div>
+    </div>
+    <center>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions">
+                        <input type="submit" value="Delete" class="btn btn-primary" />
+                    </div>
+                }
+            </div>
+        </div>
+    </center>
+</div>
+
+<div class="text-center mb-3">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

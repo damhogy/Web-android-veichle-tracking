@@ -1,0 +1,109 @@
+﻿@model Easy_Track_MVC.Models.Driver
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="main  align-self-md-center ">
+        <div class="col-lg-12 grid-margin stretched-card">
+            <div class="row flex-grow">
+                <div class="col-12 grid-margin">
+
+                    <div class="card">
+                        <form class="form-sample">
+                            <!--card header-->
+                            <div class="card-header bg-card-header ">
+                                <h4 class="">
+                                    Add Driver
+                                    <a class="btn btn-light fa-pull-right" href="/Driver/index">
+                                        <i class="fa fa-eye"></i> View Driver Details
+
+                                    </a>
+                                </h4>
+                            </div>
+
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <!--card body-->
+                            <div class="card-body">
+
+                                <!--<h4>Personal Details</h4><hr>-->
+                                <div class="row">
+
+                                    <div class="form-group col-md-6 mt-2">
+                                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-12" })
+                                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="form-group col-md-6 mt-2">
+                                        @Html.LabelFor(model => model.B_Id, "BusNum", htmlAttributes: new { @class = "control-label col-md-12" })
+                                        @Html.DropDownList("B_Id", null,"Select Bus Num",htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.B_Id, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="form-group col-md-6 mt-4 mb-3">
+                                        @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-12" })
+                                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 mt-4 mb-3">
+                                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-12" })
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+
+                                    <div class="form-group col-md-6 mt-4 mb-3">
+                                        @Html.LabelFor(model => model.Mobile, htmlAttributes: new { @class = "control-label col-md-6" })
+                                        @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 mt-4 mb-3">
+                                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-12" })
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+
+
+                                <!--footer-->
+                                <div class="card-footer  d-flex justify-content-center mt-5 ">
+                                    <input type="submit" value="Add Driver" class="btn btn-danger" />
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+}
+

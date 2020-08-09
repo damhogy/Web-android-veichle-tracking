@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "278893972592",
+    "firebase_url": "https://emad-d5504.firebaseio.com",
+    "project_id": "emad-d5504",
+    "storage_bucket": "emad-d5504.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278893972592:android:268de2e91932a5c5e878b5",
+        "android_client_info": {
+          "package_name": "com.emad.hanna.easytrack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "278893972592-b370k8gidp116j029r2bi7jjt720qdo0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.emad.hanna.easytrack",
+            "certificate_hash": "3abfa03ad5efd8c01cbf2bf75e61ddafbbc2e0d1"
+          }
+        },
+        {
+          "client_id": "278893972592-u9at0qitj16jb2ecjvv9cdb7drp4sl40.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.emad.hanna.easytrack",
+            "certificate_hash": "fb8a7359e9969a5a8ceabbabeddd2c2956d4ed5b"
+          }
+        },
+        {
+          "client_id": "278893972592-3usspkn1b172isiejeom3p82v5b7ruu6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGYkiBgQpK4AvFkjgj8Pn321GIiJnGre0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "278893972592-3usspkn1b172isiejeom3p82v5b7ruu6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/all.css" rel="stylesheet" />
+    <link href="~/Style/StyleLayout.css" rel="stylesheet" />
+    <link rel="icon" href="~/Image/logoico.ico"/>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="bg-dark mb-2" style="height:47px;">
+            <img src="~/Image/Adminlog.png" alt="avatar" style="width:47px;height:45px;border-radius: 50%" />
+            <span style="color:white">Admin Name</span>
+        </div>
+        <a href="/Bus/Create"> <i class="fas fa-bus-alt"></i> Add Bus</a>
+        <a href="/Driver/Create"><i class="fas fa-dharmachakra"></i> Add Driver</a>
+        <a href="/Parent/Create"><i class="fas fa-user-tie"></i> Add Parent</a>
+        <a href="/Student/Create"><i class="fas fa-user-graduate"></i> Add Student</a>
+        <a href="/Driver/Index"><i class="fas fa-info-circle"></i> Driver Details</a>
+        <a href="/Parent/Index"><i class="fas fa-info-circle"></i> Parent Details</a>
+        <a href="/Student/Index"><i class="fas fa-info-circle"></i> Student Details</a>
+        <a href="/Account/LoginView"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+    </div>
+
+
+    <div class="top-head d-flex justify-content-center fixed-top">
+        <div class="justify-content-center" style="font-family: 'Righteous', cursive;color:black">
+            <span style="font-size:25px">Easy</span> <img src="~/Image/logo.png" style="height:44px;width:48px" />  <span style="font-size:25px;">Track</span>
+        </div>
+    </div>
+
+
+    <div></div>
+    <div class="main" style="margin-left:165px; margin-top:50px; padding:0px 10px;">
+
+        @RenderBody()
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>

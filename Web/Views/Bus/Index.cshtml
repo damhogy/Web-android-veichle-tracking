@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Easy_Track_MVC.Models.Bus>
+
+@{
+    ViewBag.Title = "Bus";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+    <center>
+        <h6>
+            @Html.ActionLink("Add New Bus", "Create")
+        </h6>
+
+    </center>
+<table class="table table-dark table-striped table-hover table-bordered text-center" style="font-weight:bold">
+    <tr class="thead-dark">
+        <th class="text-success">
+            @Html.DisplayNameFor(model => model.BusNum)
+        </th>
+        <th class="text-success">
+            @Html.DisplayNameFor(model => model.RouteStart)
+        </th>
+        <th class="text-success">
+            @Html.DisplayNameFor(model => model.RouteEnd)
+        </th>
+        <th class="text-success">
+            @Html.DisplayNameFor(model => model.RouteMapLink)
+        </th>
+        <th class="text-success">Track</th>
+        <th class="text-success">Edit</th>
+        <th class="text-success">Details</th>
+        <th class="text-success">Delete</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.BusNum)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RouteStart)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RouteEnd)
+    </td>
+    <td>
+        <a href="@item.RouteMapLink" target="blank" class="btn btn-outline-info"> View </a>
+    </td>
+    <td>
+        <a href="https://drive.google.com/open?id=12kyWc5H4q-qaLOAHI8HtOnzXT5f3k7qh&usp=sharing" class="btn btn-success" target="_blank">Track</a>
+    </td>
+
+    <td>
+        <a href="/Bus/Edit/@item.Id" class="btn btn-primary mr-2 ml-0">Edit</a>
+    </td>
+    <td>
+        <a href="/Bus/Details/@item.Id" class="btn btn-info mr-2">Details</a>
+    </td>
+
+    <td>
+        <a href="/Bus/Delete/@item.Id" class="btn btn-danger">Delete</a>
+    </td>
+
+</tr>
+    }
+
+</table>

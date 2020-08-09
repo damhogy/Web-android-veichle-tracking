@@ -1,0 +1,150 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Pacifico|Righteous|Roboto+Condensed|Ubuntu&display=swap');
+
+body {
+    padding:0%;
+    margin:0%;
+    font-family:Lato;
+}
+.navbar-brand {
+    font-family: 'Pacifico', cursive;
+    font-size: 35px;
+    color: lightcoral !important;
+}
+.nav-link {
+    font-size: 18px;
+    margin: 16px;
+    color: black !important;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.nav-link:hover{
+    color:lightcoral !important;
+}
+.active .nav-link {
+    color: lightcoral !important;
+}
+.menu-right-btn{
+    padding:13px 46px;
+    margin-right:4%;
+    background-color:transparent;
+    transition:300ms all ease-in;
+}
+.menu-right-btn:hover{
+    color:white;
+    background-color:lightcoral;
+}
+.site-content {
+    background-image: url('../Image/Himage/Pixel-1.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+.site-title, .site-desc {
+    color: black;
+    font-family: 'Righteous', cursive;
+}
+.site-title{
+    margin-top:50%;
+    margin-bottom:6%;
+    font-size:54px;
+    padding-left:75px;
+
+}
+.site-desc{
+    font-size:25px;
+    margin-bottom:7%;
+}
+.site-btn1 {
+    margin-top:4%;
+    margin-left:33%;
+    margin-bottom:51%;
+    background-color: black;
+    color: white;
+}
+
+/* section-1 */
+
+.section-1 .heading-1 {
+    margin-top:8%;
+}
+.section-1 .heading-2 {
+    margin-bottom:5%;
+    font-size:39px;
+}
+.section-1 .para-1{
+    width:60%;
+    margin-left:20%;
+    margin-bottom:5%;
+}
+.section-1 .card-text, .para-1{
+    color:rgba(0,0,0,.69);
+}
+.section-1{
+    margin-bottom:6%;
+}
+.card{
+    width:20rem;
+}
+
+/* Section-3*/
+
+.section-3{
+    margin-top:6%;
+}
+.section-3 i{
+    color:lightcoral;
+}
+.section-3 p{
+    color:rgba(0,0,0,.69);
+}
+
+/* Section-4*/
+
+.section-4{
+    margin-top:8%;
+}
+.section-4 .row .col-md-7, .col-md-5{
+    margin-top:7%;
+    margin-bottom:7%;
+}
+.section-4 p{
+    margin-top:6%;
+    font-size:40px;
+    color:lightcoral;
+}
+.section-4 .para-1{
+    color:white;
+    font-size:20px;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top:7%;
+}
+
+/* Footer */
+
+.social i {
+    color: #ff4d4d;
+    font-size: 25px;
+}
+
+
+
+@media screen and (max-width:768px) {
+    .section-1 .card{
+        width:14rem;
+    }
+    .section-4 .col-md-7 img {
+        width:350px;
+    }
+}
+@media screen and (max-width:320px){
+    .site-btn1 .site-title{
+        font-size:30px;
+        padding-left:15%;
+    }
+    .site-btn1 .site-btn1 {
+        display:none;
+    }
+}
+/*/******************/
+/*.carousel-innerimg {
+    width: 100%;
+    height: 100%;
+}*/

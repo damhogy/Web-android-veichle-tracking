@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Easy_Track_MVC.Models.Student>
+@{
+    ViewBag.Title = "Student";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+    <center>
+        <h6>
+            @Html.ActionLink("Add New Student", "Create")
+        </h6>
+
+    </center>
+<table class="table table-dark table-striped table-hover table-bordered text-center" style="font-weight:bold">
+    <thead class="thead-dark">
+        <tr>
+            <th class="text-success">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th class="text-success">
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th class="text-success">
+                @Html.DisplayNameFor(model => model.Class)
+            </th>
+            <th class="text-success">
+                @Html.DisplayNameFor(model => model.Bus.BusNum)
+            </th>
+            <th class="text-success">
+                @Html.DisplayNameFor(model => model.Parent.Named)
+            </th>
+            <th class="text-success">Edit</th>
+            <th class="text-success">Details</th>
+            <th class="text-success">Delete</th>
+
+        </tr>
+
+    </thead>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)<br />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Class)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bus.BusNum)
+        </td>
+        <td>
+            <a href="/Parent/Details/@item.Parent.Id" class="text-info"> @Html.DisplayFor(modelItem => item.Parent.Named) </a>
+        </td>
+        <td>
+            <a href="/Student/Edit/@item.Id" class="btn btn-primary mr-2 ml-0">Edit</a>
+        </td>
+        <td>
+            <a href="/Student/Details/@item.Id" class="btn btn-info mr-2">Details</a>
+        </td>
+        <td>
+            <a href="/Student/Delete/@item.Id"  class="btn btn-danger">Delete</a>
+        </td>
+    </tr>
+}
+   
+
+</table>

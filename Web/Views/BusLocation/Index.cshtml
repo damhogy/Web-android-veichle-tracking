@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Easy_Track_MVC.Models.BusLocation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/ParentLayou.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Bus.BusNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location.Latitued)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bus.RouteStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location.Latitued)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BL_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BL_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BL_Id })
+        </td>
+    </tr>
+}
+
+</table>

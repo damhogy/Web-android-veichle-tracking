@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Easy_Track_MVC.Models.Parent>
+
+@{
+    ViewBag.Title = "Parent";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+    <center>
+        <h6>
+            @Html.ActionLink("Add New Parent", "Create")
+        </h6>
+    </center>
+<table class="table table-dark table-striped table-hover table-bordered text-center" style="font-weight:bold">
+    <tr class="thead-dark text-success">
+        <th class="text-success">
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+
+        <th class="text-success">
+            @Html.DisplayNameFor(model => model.Named)
+        </th>
+        <th class="text-success">
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th class="text-success">
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th class="text-success">
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th class="text-success">
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th class="text-success">Edit</th>
+        <th class="text-success">Details</th>
+        <th class="text-success">Delete</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr class="">
+    <td>
+        @Html.DisplayFor(modelItem => item.Id)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Named)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UserName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Phone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Password)
+    </td>
+    <td>
+        <a href="/Parent/Edit/@item.Id" class="btn btn-primary mr-2 ml-0">Edit</a>
+    </td>
+    <td>
+        <a href="/Parent/Details/@item.Id" class="btn btn-info mr-2">Details</a>
+    </td>
+    <td>
+        <a href="/Parent/Delete/@item.Id" class="btn btn-danger">Delete</a>
+    </td>
+</tr>
+    }
+
+</table>

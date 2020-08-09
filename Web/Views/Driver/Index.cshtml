@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Easy_Track_MVC.Models.Driver>
+
+@{
+    ViewBag.Title = "Driver";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+    <center>
+        <h6>
+            @Html.ActionLink("Add New Driver", "Create")
+        </h6>
+
+    </center>
+<table class="table table-dark table-striped table-hover table-bordered text-center" style="font-weight:bold">
+    <tr class="thead-dark">
+        <th class="text-success">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th class="text-success">
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th class="text-success">
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th class="text-success">
+            @Html.DisplayNameFor(model => model.Mobile)
+        </th>
+        <th class="text-success">
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th class="text-success">
+            @Html.DisplayNameFor(model => model.Bus.BusNum)
+        </th>
+        <th class="text-success">Edit</th>
+        <th class="text-success">Details</th>
+        <th class="text-success">Delete</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UserName)
+    </td>
+    <td style="color:#66ecda !important">
+        @Html.DisplayFor(modelItem => item.Email, new { style = "color:#66ecda !important" })
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Mobile)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Password)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Bus.BusNum)
+    </td>
+    <td>
+        <a href="/Driver/Edit/@item.Id" class="btn btn-primary mr-2 ml-0">Edit</a>
+    </td>
+    <td>
+        <a href="/Driver/Details/@item.Id" class="btn btn-info mr-2">Details</a>
+    </td>
+    <td>
+        <a href="/Driver/Delete/@item.Id" class="btn btn-danger">Delete</a>
+    </td>
+
+</tr>
+    }
+
+</table>

@@ -1,0 +1,35 @@
+﻿@model Easy_Track_MVC.Models.BusLocation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/ParentLayou.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BusLocation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bus.RouteStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bus.RouteStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.Latitued)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.Latitued)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BL_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

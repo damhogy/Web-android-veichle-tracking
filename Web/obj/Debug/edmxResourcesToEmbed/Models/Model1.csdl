@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ETSBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ETSBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admin" EntityType="ETSBModel.Admin" />
+    <EntitySet Name="Bus" EntityType="ETSBModel.Bus" />
+    <EntitySet Name="BusLocation" EntityType="ETSBModel.BusLocation" />
+    <EntitySet Name="Driver" EntityType="ETSBModel.Driver" />
+    <EntitySet Name="Location" EntityType="ETSBModel.Location" />
+    <EntitySet Name="Parent" EntityType="ETSBModel.Parent" />
+    <EntitySet Name="Student" EntityType="ETSBModel.Student" />
+    <EntitySet Name="sysdiagrams" EntityType="ETSBModel.sysdiagrams" />
+    <AssociationSet Name="FK_BusLocation_Bus" Association="ETSBModel.FK_BusLocation_Bus">
+      <End Role="Bus" EntitySet="Bus" />
+      <End Role="BusLocation" EntitySet="BusLocation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Driver_Bus" Association="ETSBModel.FK_Driver_Bus">
+      <End Role="Bus" EntitySet="Bus" />
+      <End Role="Driver" EntitySet="Driver" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Bus" Association="ETSBModel.FK_Student_Bus">
+      <End Role="Bus" EntitySet="Bus" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BusLocation_Location" Association="ETSBModel.FK_BusLocation_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="BusLocation" EntitySet="BusLocation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Parent" Association="ETSBModel.FK_Student_Parent">
+      <End Role="Parent" EntitySet="Parent" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Bus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BusNum" Type="Int32" />
+    <Property Name="RouteStart" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RouteEnd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RouteMapLink" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BusLocation" Relationship="ETSBModel.FK_BusLocation_Bus" FromRole="Bus" ToRole="BusLocation" />
+    <NavigationProperty Name="Driver" Relationship="ETSBModel.FK_Driver_Bus" FromRole="Bus" ToRole="Driver" />
+    <NavigationProperty Name="Student" Relationship="ETSBModel.FK_Student_Bus" FromRole="Bus" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="BusLocation">
+    <Key>
+      <PropertyRef Name="BL_Id" />
+    </Key>
+    <Property Name="BL_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="B_Id" Type="Int32" />
+    <Property Name="L_Id" Type="Int32" />
+    <NavigationProperty Name="Bus" Relationship="ETSBModel.FK_BusLocation_Bus" FromRole="BusLocation" ToRole="Bus" />
+    <NavigationProperty Name="Location" Relationship="ETSBModel.FK_BusLocation_Location" FromRole="BusLocation" ToRole="Location" />
+  </EntityType>
+  <EntityType Name="Driver">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="B_Id" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Bus" Relationship="ETSBModel.FK_Driver_Bus" FromRole="Driver" ToRole="Bus" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Latitued" Type="Double" />
+    <Property Name="Longitued" Type="Double" />
+    <Property Name="DateRegister" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="BusLocation" Relationship="ETSBModel.FK_BusLocation_Location" FromRole="Location" ToRole="BusLocation" />
+  </EntityType>
+  <EntityType Name="Parent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Named" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Student" Relationship="ETSBModel.FK_Student_Parent" FromRole="Parent" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="P_Id" Type="Int32" />
+    <Property Name="B_Id" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Bus" Relationship="ETSBModel.FK_Student_Bus" FromRole="Student" ToRole="Bus" />
+    <NavigationProperty Name="Parent" Relationship="ETSBModel.FK_Student_Parent" FromRole="Student" ToRole="Parent" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_BusLocation_Bus">
+    <End Type="ETSBModel.Bus" Role="Bus" Multiplicity="0..1" />
+    <End Type="ETSBModel.BusLocation" Role="BusLocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BusLocation">
+        <PropertyRef Name="B_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Driver_Bus">
+    <End Type="ETSBModel.Bus" Role="Bus" Multiplicity="0..1" />
+    <End Type="ETSBModel.Driver" Role="Driver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Driver">
+        <PropertyRef Name="B_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Bus">
+    <End Type="ETSBModel.Bus" Role="Bus" Multiplicity="0..1" />
+    <End Type="ETSBModel.Student" Role="Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="B_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BusLocation_Location">
+    <End Type="ETSBModel.Location" Role="Location" Multiplicity="0..1" />
+    <End Type="ETSBModel.BusLocation" Role="BusLocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BusLocation">
+        <PropertyRef Name="L_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Parent">
+    <End Type="ETSBModel.Parent" Role="Parent" Multiplicity="0..1" />
+    <End Type="ETSBModel.Student" Role="Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parent">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="P_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

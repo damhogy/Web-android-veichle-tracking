@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="94ff5e6d4de448d299c63998b03dddf0" Name="Diagram1">
+        <EntityTypeShape EntityType="ETSBModel.Admin" Width="1.5" PointX="5.75" PointY="1.125" />
+        <EntityTypeShape EntityType="ETSBModel.Bus" Width="1.5" PointX="0.75" PointY="4.625" />
+        <EntityTypeShape EntityType="ETSBModel.BusLocation" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="ETSBModel.Driver" Width="1.5" PointX="3" PointY="10.75" />
+        <EntityTypeShape EntityType="ETSBModel.Location" Width="1.5" PointX="0.75" PointY="9" />
+        <EntityTypeShape EntityType="ETSBModel.Parent" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ETSBModel.Student" Width="1.5" PointX="3" PointY="1.625" />
+        <EntityTypeShape EntityType="ETSBModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.125" />
+        <AssociationConnector Association="ETSBModel.FK_BusLocation_Bus" />
+        <AssociationConnector Association="ETSBModel.FK_Driver_Bus" />
+        <AssociationConnector Association="ETSBModel.FK_Student_Bus" />
+        <AssociationConnector Association="ETSBModel.FK_BusLocation_Location" />
+        <AssociationConnector Association="ETSBModel.FK_Student_Parent" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
